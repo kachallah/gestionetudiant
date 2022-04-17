@@ -16,7 +16,7 @@ export class ListeDesUtilisateurPage implements OnInit {
   constructor(public afDB: AngularFireDatabase, public modalController: ModalController) { }
 
   ngOnInit() {
-    this.getUserInfo()
+    this.getUserInfo();
   }
 
   getUserInfo(){
