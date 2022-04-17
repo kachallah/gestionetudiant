@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Editer infos {{userInfo.nom}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Nom</ion-label>
+    <ion-input [(ngModel)]="userInfo.nom" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Prénom</ion-label>
+    <ion-input [(ngModel)]="userInfo.prenom" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label><b>Classe</b></ion-label>
+    <ion-select placeholder="-- Selectionner --" [(ngModel)]="userInfo.classe" required>
+      <ion-select-option value="Licence1">Licence 1</ion-select-option>
+      <ion-select-option value="Licence2">Licence 2</ion-select-option>
+      <ion-select-option value="Licence3">Licence 3</ion-select-option>
+      <ion-select-option value="Master1">Master 1</ion-select-option>
+      <ion-select-option value="Master2">Master 2</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="userInfo.sexe" required>
+      <ion-list-header>
+        <ion-label><b>Sexe</b></ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Masculin</ion-label>
+        <ion-radio slot="start" value="Masculin"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Feminin</ion-label>
+        <ion-radio slot="start" value="Feminin"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Gestion d'étudiants
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="bg-img">
+    <ion-card>
+      <ion-item>
+        <ion-label><b>Nom:</b></ion-label>
+        <ion-input type="text" [(ngModel)]="dataUser.nom" required></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-label><b>Prénom:</b></ion-label>
+        <ion-input type="text" [(ngModel)]="dataUser.prenom" required></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-list>
+        <ion-item>
+          <ion-label><b>Classe</b></ion-label>
+          <ion-select placeholder="-- Selectionner --" [(ngModel)]="dataUser.classe" required>
+            <ion-select-option value="Licence1">Licence 1</ion-select-option>
+            <ion-select-option value="Licence2">Licence 2</ion-select-option>
+            <ion-select-option value="Licence3">Licence 3</ion-select-option>
+            <ion-select-option value="Master1">Master 1</ion-select-option>
+            <ion-select-option value="Master2">Master 2</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+       <!-- Datetime in popover with cover element -->
+       <ion-item button="true" id="open-date-input">
+        <ion-label>Date de Naissance</ion-label>
+        <ion-text slot="end">{{ dataUser.dateValue }}</ion-text>
+        <ion-popover trigger="open-date-input" show-backdrop="false">
+          <ng-template>
+            <ion-datetime
+              #popoverDatetime
+              presentation="date"
+              (ionChange)="dataUser.dateValue = formatDate(popoverDatetime.value)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-list>
+        <ion-radio-group [(ngModel)]="dataUser.sexe" required>
+          <ion-list-header>
+            <ion-label><b>Sexe</b></ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>Masculin</ion-label>
+            <ion-radio slot="start" value="Masculin"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Feminin</ion-label>
+            <ion-radio slot="start" value="Feminin"></ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+      </ion-list>
+    </ion-card>
+
+    <div style="text-align: center;">
+      <ion-button (click)="add()">Enregistrer</ion-button>
+      <ion-button (click)=" toUsersList()">Liste des utilisateurs</ion-button>
+    </div>
+
+      
+
+  </div>
+</ion-content>
