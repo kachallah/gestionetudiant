@@ -1,10 +1,12 @@
-.bg-img {
+ion-content {
     padding: 1px;
     height: 100%;
     width: 100%;
-    background-image: url('../../assets/bg.jpg');
-    background-repeat: no-repeat;
+    //background-image: url('../../assets/bg.jpg');
+    //background-repeat: no-repeat;
     background-size: cover;
+    background: rgb(72,189,219);
+    background: linear-gradient(168deg, rgba(72,189,219,0.5777661406359419) 33%, rgba(73,73,73,1) 99%, rgba(62,62,62,1) 100%);
 }
 ion-title {
   text-align: center;
