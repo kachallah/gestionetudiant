@@ -13,11 +13,11 @@
 </ion-header>
 
 <ion-content>
-  <div >
+  <div class="bg-img">
 
-    <ion-card *ngFor="let listUser of tabUsers" class="bg-img">
+    <ion-card *ngFor="let listUser of tabUsers">
       <ion-item-sliding> 
-        <ion-item  >
+        <ion-item  lines="none">
           <ion-label>
             <b>Prénom :</b> {{listUser.prenom}}<br>
             <b>Nom :</b> {{listUser.nom}}<br>
