@@ -16,4 +16,8 @@ export class ModifierUserPage implements OnInit {
   ngOnInit() {
   }
 
+  dismiss(){
+    this.viewCtrl.dismiss();
+  }
+
 }
