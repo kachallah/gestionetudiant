@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonDatetime, NavController } from '@ionic/angular';
+import { IonDatetime, NavController, ToastController } from '@ionic/angular';
 import { format, parseISO } from 'date-fns';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
@@ -25,7 +25,7 @@ export class HomePage {
     sexe: ''
  };
 
-  constructor(public afDB: AngularFireDatabase, public navCtrl: NavController) 
+  constructor(public afDB: AngularFireDatabase, public navCtrl: NavController, public toastController: ToastController) 
   { }
   confirm() {
     this.datetime.confirm();
@@ -39,7 +39,7 @@ export class HomePage {
     return format(parseISO(value), 'MMM dd yyyy');
   }
 
-  add() {
+  async add() {
     this.afDB.list('ListEtudiant/').push({
       nom : this.dataUser.nom,
       prenom : this.dataUser.prenom,
@@ -48,16 +48,19 @@ export class HomePage {
       sexe : this.dataUser.sexe,
       dateInscription : new Date().toISOString()
     });
-    //console.log(this.afDB);
     this.dataUser.nom = "";
     this.dataUser.prenom = "";
     this.dataUser.classe = "";
     this.dataUser.sexe = "";
     this.dataUser.dateValue = "";
 
+    const toast = await this.toastController.create({
+      message: 'Add successfully',
+      color: 'success',
+      duration: 2000
+    });
+    toast.present();
   }
-
-  
 
   toUsersList(){
     this.navCtrl.navigateRoot("/liste-des-utilisateur");

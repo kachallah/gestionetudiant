@@ -26,12 +26,10 @@
             <b>Sexe :</b> {{listUser.sexe}}
           </ion-label>
         </ion-item>
-        <ion-item-options side="start">
+        <ion-item-options side="end">
           <ion-item-option color="tertiary" (click)="editModalUser(listUser)">
             <ion-icon name="create-outline" slot="icon-only"></ion-icon>
           </ion-item-option>
-        </ion-item-options>
-        <ion-item-options side="end">
           <ion-item-option color="danger" (click)="deleteUser(listUser)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
           </ion-item-option>
