@@ -14,7 +14,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireModule } from '@angular/fire/compat';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDXxZ-Pp9aGialZMQHT6aHP2ENVvV_tSyM",
+  apiKey: "",
   authDomain: "projetsamedi.firebaseapp.com",
   projectId: "projetsamedi",
   storageBucket: "projetsamedi.appspot.com",
